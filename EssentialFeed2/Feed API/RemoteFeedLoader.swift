@@ -27,7 +27,7 @@ public final class RemoteFeedLoader {
     
     public func load(completion: @escaping (Error) -> Void) {
         client.get(from: url) { error, response  in
-            if response != nil {
+            if response != nil  {
                 completion(.invalidData)
             } else {
                 completion(.connectivity)
