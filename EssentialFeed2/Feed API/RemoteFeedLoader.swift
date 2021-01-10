@@ -40,7 +40,7 @@ public final class RemoteFeedLoader {
             switch clientResult {
             case let .success(data, response):
                 do {
-                    let items = try FeedItemsMapper.map(data, response )
+                    let items = try FeedItemsMapper.map(data, response)
                     completion(.success(items))
                 } catch {
                     completion(.failure(.invalidData))
