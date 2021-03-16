@@ -52,7 +52,6 @@ class CodableFeedStoreTests: XCTestCase, FailableFeedStore {
 
         try! "invalid data".write(to: storeURL, atomically: false, encoding: .utf8)
 
-
         assertThatRetrieveDeliversFailureOnRetrievalError(on: sut)
     }
 
