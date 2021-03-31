@@ -32,6 +32,8 @@
 		AC82D6842613B137007E01FA /* CoreDataFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82D6832613B137007E01FA /* CoreDataFeedStore.swift */; };
 		AC82D69D2613D539007E01FA /* FeedStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC82D69B2613D539007E01FA /* FeedStore.xcdatamodeld */; };
 		AC82D6AF261461E9007E01FA /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82D6AE261461E9007E01FA /* CoreDataHelpers.swift */; };
+		AC82D6BC2614636B007E01FA /* ManagedFeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82D6BB2614636B007E01FA /* ManagedFeedImage.swift */; };
+		AC82D6C126146377007E01FA /* ManagedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82D6C026146377007E01FA /* ManagedCache.swift */; };
 		ACACAD4C260001BC0057E600 /* FeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACACAD4B260001BC0057E600 /* FeedStoreSpecs.swift */; };
 		ACACAD51260003150057E600 /* XCTestCase+FeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACACAD50260003150057E600 /* XCTestCase+FeedStoreSpecs.swift */; };
 		ACACAD592600A2970057E600 /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACACAD582600A2970057E600 /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift */; };
@@ -90,6 +92,8 @@
 		AC82D6832613B137007E01FA /* CoreDataFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFeedStore.swift; sourceTree = "<group>"; };
 		AC82D69C2613D539007E01FA /* FeedStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FeedStore.xcdatamodel; sourceTree = "<group>"; };
 		AC82D6AE261461E9007E01FA /* CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
+		AC82D6BB2614636B007E01FA /* ManagedFeedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedFeedImage.swift; sourceTree = "<group>"; };
+		AC82D6C026146377007E01FA /* ManagedCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedCache.swift; sourceTree = "<group>"; };
 		ACACAD4B260001BC0057E600 /* FeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStoreSpecs.swift; sourceTree = "<group>"; };
 		ACACAD50260003150057E600 /* XCTestCase+FeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedStoreSpecs.swift"; sourceTree = "<group>"; };
 		ACACAD582600A2970057E600 /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FailableRetrieveFeedStoreSpecs.swift"; sourceTree = "<group>"; };
@@ -245,8 +249,10 @@
 		AC82D6B326146293007E01FA /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				AC82D6AE261461E9007E01FA /* CoreDataHelpers.swift */,
 				AC82D6832613B137007E01FA /* CoreDataFeedStore.swift */,
+				AC82D6AE261461E9007E01FA /* CoreDataHelpers.swift */,
+				AC82D6C026146377007E01FA /* ManagedCache.swift */,
+				AC82D6BB2614636B007E01FA /* ManagedFeedImage.swift */,
 				AC82D69B2613D539007E01FA /* FeedStore.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -436,9 +442,11 @@
 				AC1A6C3025A25938008A1CA2 /* FeedLoader.swift in Sources */,
 				AC21F55325DEF7800084C093 /* RemoteFeedItem.swift in Sources */,
 				AC49C63925EBF68B003B51BA /* FeedCachePolicy.swift in Sources */,
+				AC82D6BC2614636B007E01FA /* ManagedFeedImage.swift in Sources */,
 				AC1A6C3C25A3CD82008A1CA2 /* RemoteFeedLoader.swift in Sources */,
 				AC82D69D2613D539007E01FA /* FeedStore.xcdatamodeld in Sources */,
 				AC21F55825DEF8120084C093 /* LocalFeedImage.swift in Sources */,
+				AC82D6C126146377007E01FA /* ManagedCache.swift in Sources */,
 				ACED998E25D9C48F002CDD94 /* FeedStore.swift in Sources */,
 				ACED998925D9C36C002CDD94 /* LocalFeedLoader.swift in Sources */,
 				AC6495FC25FE7926000F441B /* CodableFeedStore.swift in Sources */,
