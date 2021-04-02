@@ -40,9 +40,11 @@ class URLSessionHTTPClientTests: XCTestCase {
     func test_getFromURL_failsOnRequestError() {
         let requestError = anyNSError()
 
-        let receivedError = resultErrorFor(data: nil, response: nil, error: requestError)
+        let receivedError = resultErrorFor(data: nil, response: nil, error: requestError) as NSError?
 
-        XCTAssertEqual(receivedError as NSError?, requestError)
+        XCTAssertEqual(receivedError?.code, requestError.code)
+        XCTAssertEqual(receivedError?.domain, requestError.domain)
+        XCTAssertNotNil(receivedError)
     }
 
     func test_getFromURL_failsOnAllInvalidRepresentationCases() {
@@ -91,7 +93,7 @@ class URLSessionHTTPClientTests: XCTestCase {
         let result = resultFor(data: data, response: response, error: error, file: file, line: line)
 
         switch result {
-        case let .success(data, response):
+        case let .success((data, response)):
             return (data, response)
         default:
             XCTFail("Expected success got \(result) instead", file: file, line: line)
@@ -111,12 +113,12 @@ class URLSessionHTTPClientTests: XCTestCase {
         }
     }
 
-    private func resultFor(data: Data?, response: URLResponse?, error: Error?, file: StaticString = #filePath, line: UInt = #line) -> HTTPClientResult {
+    private func resultFor(data: Data?, response: URLResponse?, error: Error?, file: StaticString = #filePath, line: UInt = #line) -> HTTPClient.Result {
         URLProtocolStub.stub(data: data, response: response, error: error)
         let sut = makeSUT(file: file, line: line)
         let exp = expectation(description: "Wait for completion")
 
-        var receivedResult: HTTPClientResult!
+        var receivedResult: HTTPClient.Result!
         sut.get(from: anyURL()) { result in
             receivedResult = result
             exp.fulfill()
@@ -127,16 +129,8 @@ class URLSessionHTTPClientTests: XCTestCase {
 
     }
 
-    private func anyURL() -> URL {
-        URL(string: "https://any-url.com")!
-    }
-
     private func anyData() -> Data {
         Data("any data".utf8)
-    }
-
-    private func anyNSError() -> NSError {
-        NSError(domain: "any error", code: 0)
     }
 
     private func anyHTTPURLResponse() -> HTTPURLResponse {
