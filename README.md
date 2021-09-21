@@ -1,6 +1,6 @@
 # Essential Feed App – Image Feed Feature
 
-[![Build Status](https://travis-ci.com/essentialdevelopercom/essential-feed-case-study.svg?branch=master)](https://travis-ci.com/essentialdevelopercom/essential-feed-case-study)
+[![Build Status](https://travis-ci.com/sanelz/essential-feed.svg?branch=main)](https://travis-ci.com/sanelz/essential-feed)
 
 ## BDD Specs
 
@@ -133,7 +133,7 @@ Then the app should display an error message
 1. System delivers error.
 
 #### Empty cache course (sad path):
-1. System delivers no image data.
+1. System delivers not found error.
 
 ---
 
