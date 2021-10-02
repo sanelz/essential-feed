@@ -10,7 +10,7 @@ import EssentialFeed2
 
 extension CoreDataFeedStore: FeedImageDataStore {
 
-    public func insert(data: Data, for url: URL, completion: @escaping (FeedImageDataStore.InsertionResult) -> Void) {
+    public func insert(_ data: Data, for url: URL, completion: @escaping (FeedImageDataStore.InsertionResult) -> Void) {
 
     }
 
@@ -27,6 +27,16 @@ class CoreDataFeedImageDataStoreTests: XCTestCase {
         expect(sut, toCompleteRetrievalWith: notFound(), for: anyURL())
     }
 
+    func test_retrieveImageData_deliversNotFoundWhenStoreDataURLDoesNotMatch() {
+        let sut = makeSUT()
+        let url = URL(string: "https://a-url.com")!
+        let nonMatchingURL = URL(string: "https://another-url.com2")!
+
+        insert(anyData(), for: url, into: sut)
+
+        expect(sut, toCompleteRetrievalWith: notFound(), for: nonMatchingURL)
+    }
+
     // MARK: - Helpers
 
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> CoreDataFeedStore {
@@ -35,6 +45,14 @@ class CoreDataFeedImageDataStoreTests: XCTestCase {
         let sut = try! CoreDataFeedStore(storeURL: storeURL, bundle: storeBundle)
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
+    }
+
+    private func notFound() -> FeedImageDataStore.RetrievalResult {
+        .success(.none)
+    }
+
+    private func localImage(url: URL) -> LocalFeedImage {
+        LocalFeedImage(id: UUID(), description: "any", location: "any", url: url)
     }
 
     private func expect(_ sut: CoreDataFeedStore, toCompleteRetrievalWith expectedResult: FeedImageDataStore.RetrievalResult, for url: URL, file: StaticString = #file, line: UInt = #line) {
@@ -52,8 +70,23 @@ class CoreDataFeedImageDataStoreTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
 
-    private func notFound() -> FeedImageDataStore.RetrievalResult {
-        .success(.none)
-    }
+    private func insert(_ data: Data, for url: URL, into sut: CoreDataFeedStore, file: StaticString = #file, line: UInt = #line) {
+        let exp = expectation(description: "Wait for load completion")
+        let image = localImage(url: url)
+        sut.insert([image], timestamp: Date()) { result in
+            switch result {
+                case let .failure(error):
+                    XCTFail("Failed to save \(image) with error \(error)", file: file, line: line)
 
+                case .success:
+                    sut.insert(data, for: url) { result in
+                        if case let Result.failure(error) = result {
+                            XCTFail("Failed to insert \(data) with error \(error)", file: file, line: line)
+                        }
+                    }
+            }
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 1.0)
+    }
 }
