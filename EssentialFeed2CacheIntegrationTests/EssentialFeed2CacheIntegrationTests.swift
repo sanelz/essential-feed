@@ -184,6 +184,7 @@ class EssentialFeed2CacheIntegrationTests: XCTestCase {
                 case let .failure(error):
                     XCTFail("Expected successful image data result, got \(error) instead", file: file, line: line)
             }
+            
             exp.fulfill()
         }
         wait(for: [exp], timeout: 1.0)

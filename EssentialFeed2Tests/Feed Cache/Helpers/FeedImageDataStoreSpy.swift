@@ -19,7 +19,7 @@ class FeedImageDataStoreSpy: FeedImageDataStore {
     private var retrievalCompletions = [(FeedImageDataStore.RetrievalResult) -> Void]()
     private var insertionCompletions = [(FeedImageDataStore.InsertionResult) -> Void]()
 
-    func insert(_ data: Data, for url: URL, completion: @escaping (InsertionResult) -> Void) {
+    func insert(_ data: Data, for url: URL, completion: @escaping (FeedImageDataStore.InsertionResult) -> Void) {
         receivedMessages.append(.insert(data: data, for: url))
         insertionCompletions.append(completion)
     }

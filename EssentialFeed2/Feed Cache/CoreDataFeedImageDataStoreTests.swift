@@ -19,7 +19,7 @@ class CoreDataFeedImageDataStoreTests: XCTestCase {
     func test_retrieveImageData_deliversNotFoundWhenStoreDataURLDoesNotMatch() {
         let sut = makeSUT()
         let url = URL(string: "https://a-url.com")!
-        let nonMatchingURL = URL(string: "https://another-url.com2")!
+        let nonMatchingURL = URL(string: "https://another-url.com")!
 
         insert(anyData(), for: url, into: sut)
 
@@ -69,7 +69,7 @@ class CoreDataFeedImageDataStoreTests: XCTestCase {
     // MARK: - Helpers
 
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> CoreDataFeedStore {
-        let storeURL = URL(fileURLWithPath: "dev/null")
+        let storeURL = URL(fileURLWithPath: "/dev/null")
         let sut = try! CoreDataFeedStore(storeURL: storeURL)
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
@@ -103,7 +103,7 @@ class CoreDataFeedImageDataStoreTests: XCTestCase {
     }
 
     private func insert(_ data: Data, for url: URL, into sut: CoreDataFeedStore, file: StaticString = #file, line: UInt = #line) {
-        let exp = expectation(description: "Wait for load completion")
+        let exp = expectation(description: "Wait for cache insertion")
         let image = localImage(url: url)
         sut.insert([image], timestamp: Date()) { result in
             switch result {
