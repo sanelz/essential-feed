@@ -96,6 +96,17 @@ class FeedImageDataLoaderWithFallbackCompositeTests: XCTestCase {
         }
     }
     
+    func test_loadImageData_deliversFallbackDataOnFallbackLoaderSuccess() {
+        let fallbackData = anyData()
+        let (sut, primaryLoader, fallbackLoader) = makeSUT()
+        
+        expect(sut, toCompleteWith: .success(fallbackData)) {
+            primaryLoader.complete(with: anyNSError())
+            fallbackLoader.complete(with: fallbackData)
+        }
+    }
+
+    
     // MARK: - Helpers
     
     private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (sut: FeedImageDataLoaderWithFallbackComposite, primary: LoaderSpy, fallback: LoaderSpy) {
