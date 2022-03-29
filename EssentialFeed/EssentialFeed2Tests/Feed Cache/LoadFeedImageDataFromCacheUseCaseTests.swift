@@ -89,11 +89,11 @@ class LoadFeedImageDataFromCacheUseCaseTests: XCTestCase {
         return (sut, store)
     }
 
-    private func failed() -> LocalFeedImageDataLoader.Result {
+    private func failed() -> LocalFeedImageDataLoader.LoadResult {
         .failure(LocalFeedImageDataLoader.LoadError.failed)
     }
 
-    private func notFound() -> LocalFeedImageDataLoader.Result {
+    private func notFound() -> LocalFeedImageDataLoader.LoadResult {
         .failure(LocalFeedImageDataLoader.LoadError.notFound)
     }
 
@@ -101,7 +101,7 @@ class LoadFeedImageDataFromCacheUseCaseTests: XCTestCase {
         XCTFail("Expected no no invocations", file: file, line: line)
     }
 
-    private func expect(_ sut: LocalFeedImageDataLoader, toCompleteWith expectedResult: LocalFeedImageDataLoader.Result, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
+    private func expect(_ sut: LocalFeedImageDataLoader, toCompleteWith expectedResult: LocalFeedImageDataLoader.LoadResult, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
         let exp = expectation(description: "Wait for load completion")
 
         _ = sut.loadImageData(from: anyURL()) { recievedResult in

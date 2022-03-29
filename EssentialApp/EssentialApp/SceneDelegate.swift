@@ -1,7 +1,6 @@
 import UIKit
 import CoreData
 import EssentialFeed2
-import EssentialFeediOS
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
