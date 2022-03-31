@@ -19,6 +19,7 @@ public final class ErrorView: UIView {
         super.awakeFromNib()
 
         label.text = nil
+        alpha = 0
     }
 
     private var isVisible: Bool {
