@@ -88,6 +88,7 @@
 		D630BA1C27EE2B2500B575EC /* FeedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D630BA1B27EE2B2500B575EC /* FeedCache.swift */; };
 		D630BA2627F07DF000B575EC /* FeedimageDataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D630BA2527F07DF000B575EC /* FeedimageDataCache.swift */; };
 		D6756D2D27F499240023AD53 /* FeedSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6756D2C27F499240023AD53 /* FeedSnapshotTests.swift */; };
+		D6756D3027F592790023AD53 /* UIImage+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6756D2F27F592790023AD53 /* UIImage+TestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -228,6 +229,7 @@
 		D630BA1B27EE2B2500B575EC /* FeedCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCache.swift; sourceTree = "<group>"; };
 		D630BA2527F07DF000B575EC /* FeedimageDataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedimageDataCache.swift; sourceTree = "<group>"; };
 		D6756D2C27F499240023AD53 /* FeedSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSnapshotTests.swift; sourceTree = "<group>"; };
+		D6756D2F27F592790023AD53 /* UIImage+TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+TestHelpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -445,6 +447,7 @@
 			isa = PBXGroup;
 			children = (
 				ACA981CC2618DD6E006BA157 /* Info.plist */,
+				D6756D2E27F5924E0023AD53 /* Helpers */,
 				D6756D2C27F499240023AD53 /* FeedSnapshotTests.swift */,
 			);
 			path = EssentialFeediOSTests;
@@ -575,6 +578,14 @@
 				ACFA66E625B39E170011711F /* URLSessionHTTPClientTests.swift */,
 			);
 			path = "Feed API";
+			sourceTree = "<group>";
+		};
+		D6756D2E27F5924E0023AD53 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D6756D2F27F592790023AD53 /* UIImage+TestHelpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -925,6 +936,7 @@
 			files = (
 				ACA982392619C053006BA157 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				D6756D2D27F499240023AD53 /* FeedSnapshotTests.swift in Sources */,
+				D6756D3027F592790023AD53 /* UIImage+TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
