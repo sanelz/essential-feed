@@ -91,6 +91,7 @@
 		D6756D3027F592790023AD53 /* UIImage+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6756D2F27F592790023AD53 /* UIImage+TestHelpers.swift */; };
 		D6756D3227F59C960023AD53 /* UITableView+HeaderSizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6756D3127F59C960023AD53 /* UITableView+HeaderSizing.swift */; };
 		D6756D3427F5C9EA0023AD53 /* UIViewController+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6756D3327F5C9EA0023AD53 /* UIViewController+Snapshot.swift */; };
+		D6756D3627F5CB080023AD53 /* XCTestCase+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6756D3527F5CB080023AD53 /* XCTestCase+Snapshot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -234,6 +235,7 @@
 		D6756D2F27F592790023AD53 /* UIImage+TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+TestHelpers.swift"; sourceTree = "<group>"; };
 		D6756D3127F59C960023AD53 /* UITableView+HeaderSizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+HeaderSizing.swift"; sourceTree = "<group>"; };
 		D6756D3327F5C9EA0023AD53 /* UIViewController+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Snapshot.swift"; sourceTree = "<group>"; };
+		D6756D3527F5CB080023AD53 /* XCTestCase+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Snapshot.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -590,6 +592,7 @@
 			children = (
 				D6756D2F27F592790023AD53 /* UIImage+TestHelpers.swift */,
 				D6756D3327F5C9EA0023AD53 /* UIViewController+Snapshot.swift */,
+				D6756D3527F5CB080023AD53 /* XCTestCase+Snapshot.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -943,6 +946,7 @@
 			files = (
 				ACA982392619C053006BA157 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				D6756D2D27F499240023AD53 /* FeedSnapshotTests.swift in Sources */,
+				D6756D3627F5CB080023AD53 /* XCTestCase+Snapshot.swift in Sources */,
 				D6756D3427F5C9EA0023AD53 /* UIViewController+Snapshot.swift in Sources */,
 				D6756D3027F592790023AD53 /* UIImage+TestHelpers.swift in Sources */,
 			);
