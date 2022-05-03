@@ -68,9 +68,8 @@ extension Publisher {
 }
 
 extension DispatchQueue {
-    
     static var immediateWhenOnMainQueueScheduler: ImmediateWhenOnMainQueueScheduler {
-        ImmediateWhenOnMainQueueScheduler()
+        ImmediateWhenOnMainQueueScheduler.shared
     }
     
     struct ImmediateWhenOnMainQueueScheduler: Scheduler {
@@ -85,10 +84,32 @@ extension DispatchQueue {
             DispatchQueue.main.minimumTolerance
         }
         
+        static let shared = Self()
+        
+        private static let key = DispatchSpecificKey<UInt8>()
+        private static let value = UInt8.max
+        
+        private init() {
+            DispatchQueue.main.setSpecific(key: Self.key, value: Self.value)
+        }
+
+        private func isMainQueue() -> Bool {
+            DispatchQueue.getSpecific(key: Self.key) == Self.value
+        }
+        
         func schedule(options: SchedulerOptions?, _ action: @escaping () -> Void) {
-            guard Thread.isMainThread else {
+            guard isMainQueue() else {
                 return DispatchQueue.main.schedule(options: options, action)
             }
+            
+            // The main queue is guaranteed to running on the main thread
+            // The main thread is not guaranteed to running on the main queue
+            // you can have a background queue running on the main thread
+            // because the Dispatch Framework reuses existing threads as much as
+            // possible, it's an optimization, because there is a limit of how many threads
+            // you can create
+            
+            // you can use a singleton or static properties
             
             action()
         }
