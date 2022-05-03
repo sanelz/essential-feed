@@ -102,15 +102,6 @@ extension DispatchQueue {
                 return DispatchQueue.main.schedule(options: options, action)
             }
             
-            // The main queue is guaranteed to running on the main thread
-            // The main thread is not guaranteed to running on the main queue
-            // you can have a background queue running on the main thread
-            // because the Dispatch Framework reuses existing threads as much as
-            // possible, it's an optimization, because there is a limit of how many threads
-            // you can create
-            
-            // you can use a singleton or static properties
-            
             action()
         }
         
