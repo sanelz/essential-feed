@@ -81,14 +81,16 @@ class LoadImageCommentsFromRemoteUseCaseTests: XCTestCase {
         
         let item1 = makeItem(
             id: UUID(),
-            imageURL: URL(string: "https://a-url.com")!
+            message: "a message",
+            createdAt: (Date(timeIntervalSince1970: 1598627222), "2020-08-28T15:07:02+00:00"),
+            username: "a username"
         )
         
         let item2 = makeItem(
             id: UUID(),
-            description: "a description",
-            location: "a location",
-            imageURL: URL(string: "https://another-url.com")!
+            message: "another message",
+            createdAt: (Date(timeIntervalSince1970: 1577881882), "2020-01-01T12:31:22+00:00"),
+            username: "another username"
         )
         
         let items = [item1.model, item2.model]
@@ -131,14 +133,17 @@ class LoadImageCommentsFromRemoteUseCaseTests: XCTestCase {
         .failure(error)
     }
     
-    private func makeItem(id: UUID, description: String? = nil, location: String? = nil, imageURL: URL) -> (model: FeedImage, json: [String: Any]) {
-        let item = FeedImage(id: id, description: description, location: location, url: imageURL)
-        let json = [
+    private func makeItem(id: UUID, message: String, createdAt: (date: Date, iso8601String: String), username: String) -> (model: ImageComment, json: [String: Any]) {
+        let item = ImageComment(id: id, message: message, createdAt: createdAt.date, username: username)
+        
+        let json: [String: Any] = [
             "id": id.uuidString,
-            "description": description,
-            "location": location,
-            "image": imageURL.absoluteString
-        ].compactMapValues{ $0 }
+            "message": message,
+            "created_at": createdAt.iso8601String,
+            "author": [
+                "username": username
+            ]
+        ]
         
         return (item, json)
     }
@@ -146,25 +151,6 @@ class LoadImageCommentsFromRemoteUseCaseTests: XCTestCase {
     private func makeItemsJSON(_ items: [[String: Any]]) -> Data {
         let json = ["items": items]
         return try! JSONSerialization.data(withJSONObject: json)
-    }
-    
-    private func makeItems() -> (items: [FeedImage], json: [String: Any]) {
-        let item1 = makeItem(
-            id: UUID(),
-            imageURL: URL(string: "https://a-url.com")!
-        )
-        
-        let item2 = makeItem(
-            id: UUID(),
-            description: "a description",
-            location: "a location",
-            imageURL: URL(string: "https://another-url.com")!
-        )
-        
-        let itemsJSON = ["items": [item1.json, item2.json]]
-        let items = [item1.model, item2.model]
-
-        return (items, itemsJSON)
     }
     
     private func expect(_ sut: RemoteImageCommentsLoader, toCompleteWith expectedResult: RemoteImageCommentsLoader.Result, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
