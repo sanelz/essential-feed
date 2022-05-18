@@ -91,6 +91,8 @@
 		D6C4DEF32824191900BA0660 /* ImageCommentsMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4DEF22824191900BA0660 /* ImageCommentsMapperTests.swift */; };
 		D6C4DEF728241B3000BA0660 /* ImageCommentsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4DEF628241B3000BA0660 /* ImageCommentsMapper.swift */; };
 		D6C4DEFA282423EB00BA0660 /* ImageComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4DEF9282423EB00BA0660 /* ImageComment.swift */; };
+		D6C4DF092834F52600BA0660 /* LoadResourcePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4DF082834F52600BA0660 /* LoadResourcePresenterTests.swift */; };
+		D6C4DF0C2834F6FA00BA0660 /* LoadResourcePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4DF0B2834F6FA00BA0660 /* LoadResourcePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -234,6 +236,8 @@
 		D6C4DEF22824191900BA0660 /* ImageCommentsMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsMapperTests.swift; sourceTree = "<group>"; };
 		D6C4DEF628241B3000BA0660 /* ImageCommentsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsMapper.swift; sourceTree = "<group>"; };
 		D6C4DEF9282423EB00BA0660 /* ImageComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageComment.swift; sourceTree = "<group>"; };
+		D6C4DF082834F52600BA0660 /* LoadResourcePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadResourcePresenterTests.swift; sourceTree = "<group>"; };
+		D6C4DF0B2834F6FA00BA0660 /* LoadResourcePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadResourcePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				AC1A6C0F25A257DC008A1CA2 /* Info.plist */,
+				D6C4DF0A2834F6D500BA0660 /* Shared Presentation */,
 				D6C4DEFC282552A400BA0660 /* Shared API */,
 				D6C4DEFB2825528800BA0660 /* Shared API Infra */,
 				ACED998725D9C351002CDD94 /* Feed Cache */,
@@ -335,6 +340,7 @@
 			children = (
 				AC1A6C1B25A257DC008A1CA2 /* Info.plist */,
 				AC7A282D25C9F44400186F59 /* Helpers */,
+				D6C4DF072834F4E100BA0660 /* Shared Presentation */,
 				D6C4DF002825530900BA0660 /* Shared API Infra */,
 				D6C4DF022825563F00BA0660 /* Image Comments API */,
 				AC56ABDA25D932C700F1C778 /* Feed Cache */,
@@ -642,6 +648,22 @@
 			path = "Image Comments API";
 			sourceTree = "<group>";
 		};
+		D6C4DF072834F4E100BA0660 /* Shared Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D6C4DF082834F52600BA0660 /* LoadResourcePresenterTests.swift */,
+			);
+			path = "Shared Presentation";
+			sourceTree = "<group>";
+		};
+		D6C4DF0A2834F6D500BA0660 /* Shared Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D6C4DF0B2834F6FA00BA0660 /* LoadResourcePresenter.swift */,
+			);
+			path = "Shared Presentation";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -897,6 +919,7 @@
 				AC21F55825DEF8120084C093 /* LocalFeedImage.swift in Sources */,
 				AC82D6C126146377007E01FA /* ManagedCache.swift in Sources */,
 				D6C4DEF728241B3000BA0660 /* ImageCommentsMapper.swift in Sources */,
+				D6C4DF0C2834F6FA00BA0660 /* LoadResourcePresenter.swift in Sources */,
 				ACED998E25D9C48F002CDD94 /* FeedStore.swift in Sources */,
 				ACED998925D9C36C002CDD94 /* LocalFeedLoader.swift in Sources */,
 				ACDD319E26FF4AD80043833B /* FeedImageDataStore.swift in Sources */,
@@ -942,6 +965,7 @@
 				ACACAD592600A2970057E600 /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift in Sources */,
 				AC21F5DB25E429E40084C093 /* LoadFeedFromCacheUseCaseTests.swift in Sources */,
 				ACACAD4C260001BC0057E600 /* FeedStoreSpecs.swift in Sources */,
+				D6C4DF092834F52600BA0660 /* LoadResourcePresenterTests.swift in Sources */,
 				AC7A282F25C9F46900186F59 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				AC82D67F2613ADBB007E01FA /* CoreDataFeedStoreTests.swift in Sources */,
 				ACACAD51260003150057E600 /* XCTestCase+FeedStoreSpecs.swift in Sources */,
