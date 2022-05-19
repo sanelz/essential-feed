@@ -9,13 +9,22 @@ import XCTest
 import EssentialFeed2
 
 class FeedImagePresenterTests: XCTestCase {
-
+    
+    func test_map_createsViewModel() {
+        let image = uniqueImage()
+        
+        let viewModel = FeedImagePresenter<ViewSpy, AnyImage>.map(image)
+        
+        XCTAssertEqual(viewModel.description, image.description)
+        XCTAssertEqual(viewModel.location, image.location)
+    }
+    
     func test_init_doesNotSendMessageToView() {
         let (_, view) = makeSUT()
 
         XCTAssertTrue(view.messages.isEmpty, "Expect no view messages")
     }
-
+    
     func test_didStartLoadingImageData_displaysLoadingImage() {
         let (sut, view) = makeSUT()
         let image = uniqueImage()
