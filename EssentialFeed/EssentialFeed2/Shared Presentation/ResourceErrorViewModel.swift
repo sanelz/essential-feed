@@ -6,13 +6,13 @@
 //
 
 public struct ResourceErrorViewModel {
-    public let errorMessage: String?
+    public let message: String?
 
     static var noError: ResourceErrorViewModel {
-        ResourceErrorViewModel(errorMessage: nil)
+        ResourceErrorViewModel(message: nil)
     }
 
     static func error(message: String) -> ResourceErrorViewModel {
-        ResourceErrorViewModel(errorMessage: message)
+        ResourceErrorViewModel(message: message)
     }
 }
