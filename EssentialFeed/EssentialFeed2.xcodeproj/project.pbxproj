@@ -98,6 +98,10 @@
 		D6C4DF1728353A0D00BA0660 /* SharedLocalizationTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4DF1628353A0D00BA0660 /* SharedLocalizationTestHelpers.swift */; };
 		D6C4DF1928364A7300BA0660 /* ResourceLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4DF1828364A7300BA0660 /* ResourceLoadingView.swift */; };
 		D6C4DF1B28364C8300BA0660 /* ResourceErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4DF1A28364C8300BA0660 /* ResourceErrorView.swift */; };
+		D6C4DF1E2837A16000BA0660 /* ImageCommentsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4DF1D2837A16000BA0660 /* ImageCommentsPresenterTests.swift */; };
+		D6C4DF212837A26500BA0660 /* ImageCommentsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4DF202837A26500BA0660 /* ImageCommentsPresenter.swift */; };
+		D6F71CAE283BA6A500A0910F /* ImageCommentsLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F71CAD283BA6A500A0910F /* ImageCommentsLocalizationTests.swift */; };
+		D6F71CAF283BA9C000A0910F /* ImageComments.strings in Resources */ = {isa = PBXBuildFile; fileRef = D6F71CB1283BA9C000A0910F /* ImageComments.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -250,6 +254,12 @@
 		D6C4DF1628353A0D00BA0660 /* SharedLocalizationTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocalizationTestHelpers.swift; sourceTree = "<group>"; };
 		D6C4DF1828364A7300BA0660 /* ResourceLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingView.swift; sourceTree = "<group>"; };
 		D6C4DF1A28364C8300BA0660 /* ResourceErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceErrorView.swift; sourceTree = "<group>"; };
+		D6C4DF1D2837A16000BA0660 /* ImageCommentsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsPresenterTests.swift; sourceTree = "<group>"; };
+		D6C4DF202837A26500BA0660 /* ImageCommentsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsPresenter.swift; sourceTree = "<group>"; };
+		D6F71CAD283BA6A500A0910F /* ImageCommentsLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsLocalizationTests.swift; sourceTree = "<group>"; };
+		D6F71CB0283BA9C000A0910F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ImageComments.strings; sourceTree = "<group>"; };
+		D6F71CB2283BA9D000A0910F /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/ImageComments.strings; sourceTree = "<group>"; };
+		D6F71CB3283BA9D200A0910F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/ImageComments.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +350,7 @@
 				ACED998725D9C351002CDD94 /* Feed Cache */,
 				D6C4DEF8282423D400BA0660 /* Image Comments Feature */,
 				D6C4DF012825560C00BA0660 /* Image Comments API */,
+				D6C4DF1F2837A23200BA0660 /* Image Comments Presentation */,
 				AC1A6C3325A25C86008A1CA2 /* Feed Feature */,
 				AC1A6C3A25A3CD6E008A1CA2 /* Feed API */,
 				ACDD316F26F5DDC50043833B /* Feed Presentation */,
@@ -355,6 +366,7 @@
 				D6C4DF072834F4E100BA0660 /* Shared Presentation */,
 				D6C4DF002825530900BA0660 /* Shared API Infra */,
 				D6C4DF022825563F00BA0660 /* Image Comments API */,
+				D6C4DF1C2837A11300BA0660 /* Image Comments Presentation */,
 				AC56ABDA25D932C700F1C778 /* Feed Cache */,
 				ACF5B19125AB9C0D00193D0C /* Feed API */,
 				ACD5D72426F4F674007849B0 /* Feed Presentation */,
@@ -681,6 +693,24 @@
 			path = "Shared Presentation";
 			sourceTree = "<group>";
 		};
+		D6C4DF1C2837A11300BA0660 /* Image Comments Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D6C4DF1D2837A16000BA0660 /* ImageCommentsPresenterTests.swift */,
+				D6F71CAD283BA6A500A0910F /* ImageCommentsLocalizationTests.swift */,
+			);
+			path = "Image Comments Presentation";
+			sourceTree = "<group>";
+		};
+		D6C4DF1F2837A23200BA0660 /* Image Comments Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D6C4DF202837A26500BA0660 /* ImageCommentsPresenter.swift */,
+				D6F71CB1283BA9C000A0910F /* ImageComments.strings */,
+			);
+			path = "Image Comments Presentation";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -876,6 +906,7 @@
 			files = (
 				ACDD317326F5DFDB0043833B /* Feed.strings in Resources */,
 				D6C4DF11283513AA00BA0660 /* Shared.strings in Resources */,
+				D6F71CAF283BA9C000A0910F /* ImageComments.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -933,6 +964,7 @@
 				D6C4DEFA282423EB00BA0660 /* ImageComment.swift in Sources */,
 				AC82D6BC2614636B007E01FA /* ManagedFeedImage.swift in Sources */,
 				ACCF50E12709134200ACFC56 /* CoreDataFeedStore+FeedStore.swift in Sources */,
+				D6C4DF212837A26500BA0660 /* ImageCommentsPresenter.swift in Sources */,
 				AC82D69D2613D539007E01FA /* FeedStore.xcdatamodeld in Sources */,
 				ACDD317D26F5E1F40043833B /* FeedViewModel.swift in Sources */,
 				AC21F55825DEF8120084C093 /* LocalFeedImage.swift in Sources */,
@@ -981,7 +1013,9 @@
 				AC56ABDC25D9332800F1C778 /* CacheFeedUseCaseTests.swift in Sources */,
 				ACACAD662600A6E80057E600 /* XCTestCase+FailableDeleteFeedStoreSpecs.swift in Sources */,
 				D6C4DF10283512FF00BA0660 /* SharedLocalizationTests.swift in Sources */,
+				D6C4DF1E2837A16000BA0660 /* ImageCommentsPresenterTests.swift in Sources */,
 				ACDD31A0270271AB0043833B /* FeedImageDataStoreSpy.swift in Sources */,
+				D6F71CAE283BA6A500A0910F /* ImageCommentsLocalizationTests.swift in Sources */,
 				ACCF50DC2708C5BD00ACFC56 /* CoreDataFeedImageDataStoreTests.swift in Sources */,
 				ACD5D72626F4F68E007849B0 /* FeedPresenterTests.swift in Sources */,
 				ACACAD592600A2970057E600 /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift in Sources */,
@@ -1092,6 +1126,16 @@
 				D6C4DF15283513B100BA0660 /* pt-BR */,
 			);
 			name = Shared.strings;
+			sourceTree = "<group>";
+		};
+		D6F71CB1283BA9C000A0910F /* ImageComments.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D6F71CB0283BA9C000A0910F /* en */,
+				D6F71CB2283BA9D000A0910F /* el */,
+				D6F71CB3283BA9D200A0910F /* pt-BR */,
+			);
+			name = ImageComments.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
