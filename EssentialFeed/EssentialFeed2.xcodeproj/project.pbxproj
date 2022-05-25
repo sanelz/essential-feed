@@ -183,7 +183,7 @@
 		AC62EEBD263B4B5800DC0105 /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		AC62EEC4263B4CC200DC0105 /* Feed.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Feed.xcassets; sourceTree = "<group>"; };
 		AC71D8E8261EEA3A00F94D64 /* FeedImageCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCellController.swift; sourceTree = "<group>"; };
-		AC791038263BF04B0007FB85 /* UITableView+Dequeueing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITableView+Dequeueing.swift"; path = "EssentialFeediOS/Feed UI/Views/Helpers/UITableView+Dequeueing.swift"; sourceTree = SOURCE_ROOT; };
+		AC791038263BF04B0007FB85 /* UITableView+Dequeueing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITableView+Dequeueing.swift"; path = "EssentialFeediOS/Shared UI/Views/Helpers/UITableView+Dequeueing.swift"; sourceTree = SOURCE_ROOT; };
 		AC79103F263BF3040007FB85 /* UIImageView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Animations.swift"; sourceTree = "<group>"; };
 		AC7A282E25C9F46900186F59 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		AC7A283625CA15F300186F59 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
@@ -490,6 +490,7 @@
 			isa = PBXGroup;
 			children = (
 				ACA981C02618DD6E006BA157 /* Info.plist */,
+				D6F71CCE283E6B7600A0910F /* Shared UI */,
 				ACA9833B261E19DD006BA157 /* Feed UI */,
 			);
 			path = EssentialFeediOS;
@@ -515,7 +516,6 @@
 		ACA98308261E142F006BA157 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				ACA982442619CFD3006BA157 /* ListViewController.swift */,
 				AC71D8E8261EEA3A00F94D64 /* FeedImageCellController.swift */,
 			);
 			path = Controllers;
@@ -528,7 +528,6 @@
 				ACA9826D261A53DF006BA157 /* FeedImageCell.swift */,
 				AC62EEBD263B4B5800DC0105 /* Feed.storyboard */,
 				AC62EEC4263B4CC200DC0105 /* Feed.xcassets */,
-				ACD5D71D26F3BF96007849B0 /* ErrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -558,10 +557,7 @@
 			isa = PBXGroup;
 			children = (
 				ACA982AF261B6B37006BA157 /* UIView+shimmering.swift */,
-				AC791038263BF04B0007FB85 /* UITableView+Dequeueing.swift */,
 				AC79103F263BF3040007FB85 /* UIImageView+Animations.swift */,
-				ACD5D72226F3CD46007849B0 /* UIRefreshControl+Helpers.swift */,
-				D6756D3127F59C960023AD53 /* UITableView+HeaderSizing.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -749,6 +745,42 @@
 				D6F71CBF283D31B700A0910F /* FEED_WITH_FAILED_IMAGE_LOADING_light.png */,
 			);
 			path = snapshots;
+			sourceTree = "<group>";
+		};
+		D6F71CCE283E6B7600A0910F /* Shared UI */ = {
+			isa = PBXGroup;
+			children = (
+				D6F71CCF283E6BB300A0910F /* Controllers */,
+				D6F71CD0283E6BFB00A0910F /* Views */,
+			);
+			path = "Shared UI";
+			sourceTree = "<group>";
+		};
+		D6F71CCF283E6BB300A0910F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ACA982442619CFD3006BA157 /* ListViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D6F71CD0283E6BFB00A0910F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D6F71CD1283E6C4C00A0910F /* Helpers */,
+				ACD5D71D26F3BF96007849B0 /* ErrorView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D6F71CD1283E6C4C00A0910F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				ACD5D72226F3CD46007849B0 /* UIRefreshControl+Helpers.swift */,
+				AC791038263BF04B0007FB85 /* UITableView+Dequeueing.swift */,
+				D6756D3127F59C960023AD53 /* UITableView+HeaderSizing.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
