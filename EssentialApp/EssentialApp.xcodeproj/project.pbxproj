@@ -34,6 +34,8 @@
 		D6756D3F27FC3F970023AD53 /* EssentialFeed2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D6756D3D27FC3F970023AD53 /* EssentialFeed2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D6756D4227FC3FAB0023AD53 /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6756D4127FC3FAB0023AD53 /* EssentialFeediOS.framework */; };
 		D6756D4327FC3FAB0023AD53 /* EssentialFeediOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D6756D4127FC3FAB0023AD53 /* EssentialFeediOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D69E695F2850A48800AC776A /* CommentsUIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69E695E2850A48800AC776A /* CommentsUIIntegrationTests.swift */; };
+		D69E69612850A55B00AC776A /* CommentsUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69E69602850A55B00AC776A /* CommentsUIComposer.swift */; };
 		D6C4DEF1281FFEAD00BA0660 /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4DEF0281FFEAD00BA0660 /* CombineHelpers.swift */; };
 		D6E878DF27E9DAD000CC7E19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E878DE27E9DAD000CC7E19 /* AppDelegate.swift */; };
 		D6E878E127E9DAD000CC7E19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E878E027E9DAD000CC7E19 /* SceneDelegate.swift */; };
@@ -92,6 +94,8 @@
 		D6756D3727F5F2600023AD53 /* UIView+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TestHelpers.swift"; sourceTree = "<group>"; };
 		D6756D3D27FC3F970023AD53 /* EssentialFeed2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EssentialFeed2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6756D4127FC3FAB0023AD53 /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D69E695E2850A48800AC776A /* CommentsUIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsUIIntegrationTests.swift; sourceTree = "<group>"; };
+		D69E69602850A55B00AC776A /* CommentsUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsUIComposer.swift; sourceTree = "<group>"; };
 		D6BA3D8227E9E22500AFAF44 /* EssentialFeed2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EssentialFeed2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6BA3D8627E9E23200AFAF44 /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6C4DEF0281FFEAD00BA0660 /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 				D6E878E027E9DAD000CC7E19 /* SceneDelegate.swift */,
 				D6C4DEF0281FFEAD00BA0660 /* CombineHelpers.swift */,
 				D6756D0B27F32DD70023AD53 /* FeedUIComposer.swift */,
+				D69E69602850A55B00AC776A /* CommentsUIComposer.swift */,
 				D6756D0927F32DD70023AD53 /* WeakRefVirtualProxy.swift */,
 				D6756D0727F32DD70023AD53 /* LoadResourcePresentationAdapter.swift */,
 				D6756D0827F32DD70023AD53 /* FeedViewAdapter.swift */,
@@ -201,6 +206,7 @@
 				D6756D0427F329570023AD53 /* SceneDelegateTests.swift */,
 				D6756D2627F3382F0023AD53 /* FeedAcceptanceTests.swift */,
 				D6756D2427F32E350023AD53 /* FeedUIIntegrationTests.swift */,
+				D69E695E2850A48800AC776A /* CommentsUIIntegrationTests.swift */,
 			);
 			path = EssentialAppTests;
 			sourceTree = "<group>";
@@ -314,6 +320,7 @@
 				D6756D1027F32DD70023AD53 /* FeedUIComposer.swift in Sources */,
 				D6756D0D27F32DD70023AD53 /* LoadResourcePresentationAdapter.swift in Sources */,
 				D6756D0C27F32DD70023AD53 /* WeakRefVirtualProxy.swift in Sources */,
+				D69E69612850A55B00AC776A /* CommentsUIComposer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D69E695F2850A48800AC776A /* CommentsUIIntegrationTests.swift in Sources */,
 				D6756D1D27F32E120023AD53 /* FeedUIIntegrationTests+LoaderSpy.swift in Sources */,
 				D6756D2327F32E120023AD53 /* UIButton+TestHelpers.swift in Sources */,
 				D630BA1427ECBFE700B575EC /* SharedTestHelpers.swift in Sources */,
