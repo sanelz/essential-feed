@@ -16,7 +16,7 @@ class SceneDelegateTests: XCTestCase {
     
     func test_configureWindow_configuresRootViewController() {
         let sut = SceneDelegate()
-        sut.window = UIWindow()
+        sut.window = UIWindowSpy()
         
         sut.configureWindow()
         
